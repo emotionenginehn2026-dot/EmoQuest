@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmoQuest - Dashboard Táctico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <h2>🗡️ EMOQUEST HUD</h2>
+        <div class="user-info">
+            EXPLORADOR: <span id="displayUser">Cargando...</span> | ROL: <strong id="displayRole">Rol</strong>
+            <button id="logoutBtn" class="btn-secondary" style="margin-left: 15px;">ABANDONAR</button>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <!-- HUD de Vitalidad e Inventario XP -->
+        <div class="hud-panel">
+            <div class="card">
+                <h3>📜 EXPERIENCIA / RANGO</h3>
+                <p>Nivel de Rango: <strong id="userLevel" style="color: var(--re-green);">1</strong></p>
+                <div class="bar-outer">
+                    <div class="bar-inner-xp" id="xpBar" style="width: 50%;"></div>
+                </div>
+                <p>XP ACUMULADA: <span id="userXP" style="color: var(--uncharted-gold);">250</span> / 500 PUNTOS</p>
+            </div>
+
+            <div class="card">
+                <h3>🩺 ESTADO DE VITALIDAD (ECG)</h3>
+                <div class="status-indicator">
+                    <div class="ecg-heartbeat"></div>
+                    <span>CONDICIÓN: <strong style="color: var(--re-green);">FINE (100%)</strong></span>
+                </div>
+                <div class="bar-outer">
+                    <div class="bar-inner-hp" style="width: 100%;"></div>
+                </div>
+                <p style="font-size: 0.8rem; color: #888;">Resistencia académica operativa.</p>
+            </div>
+        </div>
+
+        <!-- Misiones / Objetivos del Diario -->
+        <section class="card">
+            <h3>📖 OBJETIVOS Y RELIQUIAS EN EL MAPA</h3>
+            
+            <div class="mission-card">
+                <div>
+                    <h4>[MISIÓN 01] El Enigma de la Daga Antigua</h4>
+                    <p>RECOMPENSA DE RELIQUIA: +100 XP</p>
+                </div>
+                <button class="btn-action" onclick="completarMision(100)">RESOLVER 🎯</button>
+            </div>
+
+            <div class="mission-card">
+                <div>
+                    <h4>[MISIÓN 02] Desafío de Supervivencia Lógica</h4>
+                    <p>RECOMPENSA DE RELIQUIA: +150 XP</p>
+                </div>
+                <button class="btn-action" onclick="completarMision(150)">RESOLVER 🎯</button>
+            </div>
+        </section>
+
+        <!-- Panel de Administración estilo Consola de Control -->
+        <section class="card admin-panel" id="adminPanel" style="margin-top: 25px;">
+            <h3>🛠️ PANEL DE CONTROL DE MISIÓN (LÍDER)</h3>
+            <form id="missionForm" style="display: flex; gap: 10px; margin-top: 15px;">
+                <input type="text" id="missionTitle" class="form-group" placeholder="Nombre de la Misión / Enigma" required style="flex: 2;">
+                <input type="number" id="missionXP" class="form-group" placeholder="XP" required style="flex: 1;">
+                <button type="submit" class="btn-primary" style="flex: 1;">AÑADIR AL MAPA</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

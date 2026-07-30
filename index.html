@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmoQuest - Status Screen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-body">
+    <div class="login-card">
+        <h1>🗡️ EMOQUEST</h1>
+        <p class="subtitle">// EXPEDICIÓN TÁCTICA DE CONOCIMIENTO //</p>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">IDENTIFICACIÓN DEL EXPLORADOR:</label>
+                <input type="text" id="username" required placeholder="Ej. Nathan Drake">
+            </div>
+
+            <div class="form-group">
+                <label for="userRole">ROL ASIGNADO EN MAPA:</label>
+                <select id="userRole" required>
+                    <option value="Usuario / Estudiante">Explorador (Estudiante)</option>
+                    <option value="Administrador del Sistema">Líder de Expedición (Admin)</option>
+                    <option value="Auditor de Calidad">Auditor Táctico</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-primary">DESPLEGAR EXPEDICIÓN 🗝️</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('username').value;
+            const role = document.getElementById('userRole').value;
+
+            localStorage.setItem('emoquest_user', name);
+            localStorage.setItem('emoquest_role', role);
+
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>
