@@ -1,9 +1,9 @@
-# 🎮 Emotion Engine - GameLearn
+# 🎮 EmoQuest - GameLearn
 
 Plataforma de Aprendizaje Basado en Juegos desarrollada para **Hackathon Nicaragua 2026**.
 
 ## 🚀 Descripción General
-Emotion Engine es una solución educativa gamificada diseñada para transformar la experiencia de aprendizaje mediante la resolución de trivias, acumulación de XP, niveles e insignias en tiempo real.
+EmoQuest es una solución educativa gamificada diseñada para transformar la experiencia de aprendizaje mediante la resolución de trivias, acumulación de XP, niveles e insignias en tiempo real.
 
 ## 🛠️ Tecnologías Utilizadas
 * **Frontend:** HTML5, CSS3, JavaScript (Vanilla ES6)
